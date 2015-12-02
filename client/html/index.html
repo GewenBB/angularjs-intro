@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- ng-app directive assigns the module to be used within the containing element-->
+<html ng-app="Todo">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS Intro</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body class="container">
+
+    <div class="info" ng-controller="MainCtrl">
+
+      <!-- The {{}} interpolates a string from $scope -->
+      <span class="text-muted"> App Name: {{ name }} version: {{ version }} </span>
+    </div>
+    
+  <!-- We're using controller as syntax, which instantiates the TodoController class -->
+    <div class="todo-list-container panel panel-primary" ng-controller="TodoController as vm">
+      <h2 class="panel-heading">Todo List</h2>
+      <ul class="todo-list list-group">
+
+        <!-- ng-repeat iterates through a list or collections: var in array for lists-->
+        <li class="list-group-item" ng-repeat="todo in vm.todos">
+
+          <!-- ng-model binds an element to javascript value-->
+          <input type="checkbox" ng-model="todo.isChecked" ng-change="vm.update()">
+          <span class="todo-text">{{ todo.text }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Libs be included first -->
+    <script type="text/javascript" src="jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="angular/angular.js"></script>
+    
+    <!-- Angular modules -->
+    <script type="text/javascript" src="components/todo/TodoController.js"></script>
+    <script type="text/javascript" src="components/todo/TodoService.js"></script>
+    <script type="text/javascript" src="components/todo/TodoDirective.js"></script>
+
+    <!-- App must be included last-->
+     <script type="text/javascript" src="app.js"></script>
+
+  </body>
+</html>

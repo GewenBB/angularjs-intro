@@ -1,0 +1,24 @@
+{
+  "name": "angularjs-intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GewenBB/angularjs-intro.git"
+  },
+  "author": "Gabar (gewen87@gmail.com)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/GewenBB/angularjs-intro/issues"
+  },
+  "homepage": "https://github.com/GewenBB/angularjs-intro#readme",
+  "dependencies": {
+    "chai": "^3.4.1",
+    "express": "^4.13.3",
+    "mocha": "^2.3.4"
+  }
+}
